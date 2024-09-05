@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Container } from './container';
 import { Button } from '../ui/button';
 import { ArrowRight, ShoppingCart, User } from 'lucide-react';
+import Image from 'next/image';
+import PizzaImage from '@/img/pizza (1).png';
 
 interface Props {
     className?: string;
@@ -15,7 +18,7 @@ export const Header: React.FC<Props> = ({ className }) => {
                 {/* Left side */}
                 <div className='flex items-center gap-4'></div>
                 <div className='flex items-center'>
-                    <span className='text-6xl ml-2'>🍕</span>
+                    <Image src={PizzaImage} alt="Sun" className='h-12 w-12 ml-2 mr-2' />
                 </div>
 
                 {/* Text aligned to the left edge of the screen */}

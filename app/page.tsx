@@ -30,7 +30,7 @@ export default function Home() {
               },
               
               {
-                id: 1,
+                id: 2,
                 name: "Burger Pizza",
                 imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
                 price: 450,
@@ -39,7 +39,7 @@ export default function Home() {
               
               
               {
-                id: 1,
+                id: 3,
                 name: "Burger Pizza",
                 imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
                 price: 450,
@@ -47,7 +47,7 @@ export default function Home() {
               },
               
               {
-                id: 1,
+                id: 4,
                 name: "Burger Pizza",
                 imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
                 price: 450,
@@ -55,7 +55,7 @@ export default function Home() {
               },
               
               {
-                id: 1,
+                id: 5,
                 name: "Burger Pizza",
                 imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
                 price: 450,
@@ -63,16 +63,7 @@ export default function Home() {
               },
               
               {
-                id: 1,
-                name: "Burger Pizza",
-                imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
-                price: 450,
-                items: [{ price: 450 }],
-              },
-              
-              
-              {
-                id: 1,
+                id: 6,
                 name: "Burger Pizza",
                 imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
                 price: 450,
@@ -81,12 +72,89 @@ export default function Home() {
               
               
               {
-                id: 1,
+                id: 7,
+                name: "Burger Pizza",
+                imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                price: 450,
+                items: [{ price: 450 }],
+              },
+              
+              
+              {
+                id: 8,
                 name: "Burger Pizza",
                 imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
                 price: 450,
                 items: [{ price: 450 }],
               },]} categoryId={1} />
+
+
+<ProductsGroupList title={"Combo"} items={[{
+                id: 9,
+                name: "Burger Pizza",
+                imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                price: 450,
+                items: [{ price: 450 }],
+              },
+              
+              {
+                id: 10,
+                name: "Burger Pizza",
+                imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                price: 450,
+                items: [{ price: 450 }],
+              },
+              
+              
+              {
+                id: 11,
+                name: "Burger Pizza",
+                imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                price: 450,
+                items: [{ price: 450 }],
+              },
+              
+              {
+                id: 12,
+                name: "Burger Pizza",
+                imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                price: 450,
+                items: [{ price: 450 }],
+              },
+              
+              {
+                id: 13,
+                name: "Burger Pizza",
+                imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                price: 450,
+                items: [{ price: 450 }],
+              },
+              
+              {
+                id: 14,
+                name: "Burger Pizza",
+                imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                price: 450,
+                items: [{ price: 450 }],
+              },
+              
+              
+              {
+                id: 15,
+                name: "Burger Pizza",
+                imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                price: 450,
+                items: [{ price: 450 }],
+              },
+              
+              
+              {
+                id: 16,
+                name: "Burger Pizza",
+                imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                price: 450,
+                items: [{ price: 450 }],
+              },]} categoryId={2} />
             </div>
           </div>
         </div>
