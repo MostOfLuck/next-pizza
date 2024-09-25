@@ -1,17 +1,24 @@
+'use client'
+
+
 import React from "react";
 import { Title } from "./title";
 import { FilterCheckbox } from "./filter-checkbox";
 import { Input } from "../ui/input";
 import { RangeSlider } from "./range-slider";
-import { Check } from "lucide-react";
-import { Checkbox } from "@radix-ui/react-checkbox";
 import { CheckboxFiltersGroup } from "./checkbox-filters-group";
+import { useFilterIngredients } from "@/hooks/useFilterIngredients";
 
 interface Props {
     className?: string;
 }
 
 export const Filters: React.FC<Props> = ({ className }) => { 
+    const {ingredients, loading} = useFilterIngredients();
+
+
+    const items = ingredients.map((item) => ({value: String(item.id), text: item.name}));
+
     return (
         <div className={className}>
             <Title text="Filtrovat" size="sm" className="mb-5 font-bold"/>
@@ -36,86 +43,9 @@ export const Filters: React.FC<Props> = ({ className }) => {
             title="Složení"
             className="mt-5"
             limit={6}
-            defaultItems={[
-                {
-                    text: "Bavlna",
-                    value: "1"
-                },
-                {
-                    text: "Polyester",
-                    value: "2"
-                },
-                {
-                    text: "Viskóza",
-                    value: "3"
-                },
-                {
-                    text: "Elastan",
-                    value: "4"
-                },
-                {
-                    text: "Lyocell",
-                    value: "5"
-                },
-                {
-                    text: "Polyamid",
-                    value: "6"
-                }
-            ]}
-
-            items={[
-                {
-                    text: "Bavlna",
-                    value: "1"
-                },
-                {
-                    text: "Polyester",
-                    value: "2"
-                },
-                {
-                    text: "Viskóza",
-                    value: "3"
-                },
-                {
-                    text: "Elastan",
-                    value: "4"
-                },
-                {
-                    text: "Lyocell",
-                    value: "5"
-                },
-                {
-                    text: "Polyamid",
-                    value: "6"
-                },
-
-                {
-                    text: "Bavlna",
-                    value: "1"
-                },
-                {
-                    text: "Polyester",
-                    value: "2"
-                },
-                {
-                    text: "Viskóza",
-                    value: "3"
-                },
-                {
-                    text: "Elastan",
-                    value: "4"
-                },
-                {
-                    text: "Lyocell",
-                    value: "5"
-                },
-                {
-                    text: "Polyamid",
-                    value: "6"
-                }
-
-                
-            ]}
+            defaultItems={items.slice(0,6)}
+            items={items}
+            loading={loading}
             
             />
 
