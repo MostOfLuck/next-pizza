@@ -1,6 +1,5 @@
 'use client'
 
-
 import React from "react";
 import { Title } from "./title";
 import { FilterCheckbox } from "./filter-checkbox";
@@ -43,12 +42,10 @@ export const Filters: React.FC<Props> = ({ className }) => {
             title="Složení"
             className="mt-5"
             limit={6}
-            defaultItems={items.slice(0,6)}
+            defaultItems={items.slice(0, 6)}
             items={items}
             loading={loading}
-            
             />
-
         </div>
     );
 };
