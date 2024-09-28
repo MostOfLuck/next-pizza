@@ -10,25 +10,28 @@ type Item = FilterChecboxProps;
 interface Props {
     title: string;
     items: Item[];
-    defaultItems: Item[];
+    defaultItems?: Item[];
     limit?: number;
     loading?: boolean;
     seacrhInputPlaceholder?: string;
-    onChange?: (values: string[]) => void;
+    onClickCheckbox?: (id: string) => void;
     defaultValue?: string[];
+    selected?: Set<string>;
     className?: string;
+    name?: string;
 }
 
 export const CheckboxFiltersGroup: React.FC<Props> = ({
     title,
     items,
-    defaultItems = [],
+    defaultItems,
     limit = 5,
     seacrhInputPlaceholder = "Vyhledávání...",
     className,
     loading,
-    onChange,
-    defaultValue = [],
+    onClickCheckbox,
+    selected,
+    name,
 }) => {
     const [showAll, setShowAll] = React.useState(false);
     const [searchValue, setSearchValue] = React.useState("");
@@ -52,7 +55,9 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
         </div>
     }
 
-    const list = showAll ? items.filter((item) => item.text.toLowerCase().includes(searchValue.toLocaleLowerCase())) : defaultItems?.slice(0, limit);
+    const list = showAll 
+    ? items.filter((item) => item.text.toLowerCase().includes(searchValue.toLocaleLowerCase()))
+    : (defaultItems || items).slice(0, limit);
 
     return (
         <div className={className}>
@@ -73,8 +78,9 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
                         text={item.text}
                         value={item.value}
                         endAdornment={item.endAdornment}
-                        checked={false}
-                        onCheckedChange={(ids) => console.log(ids)}
+                        checked={selected?.has(item.value)}
+                        onCheckedChange={() => onClickCheckbox?.(item.value)}
+                        name={name}
                       />
                     );
                 })}
