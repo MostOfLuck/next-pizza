@@ -64,7 +64,7 @@ await prisma.user.createMany({
      const pizza1 = await prisma.product.create({
         data: {
             name: 'Pepperoni fresco',
-            imageUrl: 'https://i.ibb.co/c6RsFNb/Pepperoni-fresco.png',
+            imageUrl: 'https://media.dodostatic.net/image/r:584x584/11EE7D612FC7B7FCA5BE822752BEE1E5.avif',
             categoryId: 1,
             ingriedients: {
                 connect: ingredients.slice(0, 5),
@@ -75,7 +75,7 @@ await prisma.user.createMany({
      const pizza2 = await prisma.product.create({
         data: {
             name: 'Sýr',
-            imageUrl: 'https://i.ibb.co/X7H3DYb/S-r.png',
+            imageUrl: 'https://media.dodostatic.net/image/r:584x584/11EE7D610D2925109AB2E1C92CC5383C.avif',
             categoryId: 1,
             ingriedients: {
                 connect: ingredients.slice(5, 10),
@@ -87,7 +87,7 @@ await prisma.user.createMany({
      const pizza3 = await prisma.product.create({
         data: {
             name: 'Chorizo fresco',
-            imageUrl: 'https://i.ibb.co/YdMr90L/Chorizo-fresco.png',
+            imageUrl: 'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.avif',
             categoryId: 1,
             ingriedients: {
                 connect: ingredients.slice(10, 40),
