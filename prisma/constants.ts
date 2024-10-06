@@ -3,25 +3,19 @@ export const categories = [
         name: 'Pizzy' 
     },
     { 
-        name: 'Combo' 
+        name: 'Snídaně' 
     },
     { 
-        name:'Pasta'
+        name:'Předkrmy'
      },
     { 
-        name: 'Salát'
+        name: 'Koktejly'
      },
     { 
         name: 'Dezert'
      },
     { 
         name:'Nápoje'
-     },
-    { 
-        name:'Káva'
-     },
-    { 
-        name:'Koktejly'
      },
 ];
 
