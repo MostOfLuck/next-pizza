@@ -8,7 +8,7 @@ export default async function Home() {
     include: {
       products: {
         include: {
-          ingriedients: true,
+          ingredients: true,
           items: true,
         }
       },

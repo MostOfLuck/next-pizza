@@ -1,6 +1,5 @@
 'use client'
 
-
 import { Dialog, DialogContent } from "@/shared/components/ui/dialog";
 import { cn } from "@/shared/lib/utils";
 import { Product } from "@prisma/client";
@@ -24,7 +23,7 @@ const isPizzaForm = Boolean(product.items[0].pizzaType);
         <DialogContent className={cn("p-0 w-[1060px] max-w-[1060px] min-h-[550px] bg-white overflow-hidden", className)}>
             {
                 isPizzaForm ? (
-                    <ChoosePizzaForm imageUrl={product.imageUrl} name={product.name} ingredients={[]} />
+                    <ChoosePizzaForm imageUrl={product.imageUrl} name={product.name} ingredients={product.ingredients} />
                 ) : <ChooseProductForm imageUrl={product.imageUrl} name={product.name} />
             }
         </DialogContent>

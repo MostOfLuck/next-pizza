@@ -20,14 +20,12 @@ model User {
   provider String?
   providerId String?
 
-    cart Cart?
-    orders Order[]
-    verificationCode VerficationCode?
+  cart Cart?
+  orders Order[]
+  verificationCode VerficationCode?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-
 }
 
 model Category {
@@ -46,7 +44,7 @@ model Product {
   name String
   imageUrl String
 
-  ingriedients Ingredient[]
+  ingredients Ingredient[] // Corrected typo here
   items ProductItem[]
 
   category Category @relation(fields: [categoryId], references: [id])
@@ -54,6 +52,8 @@ model Product {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  Ingredient Ingredient[] @relation("ProductIngredients")
 }
 
 model ProductItem {
@@ -76,13 +76,14 @@ model Ingredient {
   price Int
   imageUrl String
 
-  products Product[]
+  products Product[] @relation("ProductIngredients") // Added relation name
   cartItems CartItem[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-}
 
+  Product Product[]
+}
 
 model Cart {
   id Int @id @default(autoincrement())
@@ -103,7 +104,6 @@ model Cart {
 model CartItem {
   id Int @id @default(autoincrement())
 
-  
   cart Cart @relation(fields: [cartId], references: [id])
   cartId Int
 
@@ -142,7 +142,6 @@ model Order {
   updatedAt DateTime @updatedAt
 }
 
-
 model VerficationCode {
   id Int @id @default(autoincrement())
 
@@ -155,7 +154,6 @@ model VerficationCode {
 
   @@unique([userId, code])
 }
-
 
 enum OrderStatus {
   PENDING

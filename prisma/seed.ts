@@ -66,7 +66,7 @@ await prisma.user.createMany({
             name: 'Pepperoni fresco',
             imageUrl: 'https://media.dodostatic.net/image/r:584x584/11EE7D612FC7B7FCA5BE822752BEE1E5.avif',
             categoryId: 1,
-            ingriedients: {
+            ingredients: {
                 connect: ingredients.slice(0, 5),
             },
         }
@@ -77,7 +77,7 @@ await prisma.user.createMany({
             name: 'Sýr',
             imageUrl: 'https://media.dodostatic.net/image/r:584x584/11EE7D610D2925109AB2E1C92CC5383C.avif',
             categoryId: 1,
-            ingriedients: {
+            ingredients: {
                 connect: ingredients.slice(5, 10),
             },
         }
@@ -89,7 +89,7 @@ await prisma.user.createMany({
             name: 'Chorizo fresco',
             imageUrl: 'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.avif',
             categoryId: 1,
-            ingriedients: {
+            ingredients: {
                 connect: ingredients.slice(10, 40),
             },
         }
