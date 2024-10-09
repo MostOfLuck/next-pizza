@@ -1,19 +1,20 @@
 import { cn } from "@/shared/lib/utils";
-import { Ingredient } from "@prisma/client";
+import { Ingredient, ProductItem } from "@prisma/client";
 import React from "react";
 import { PizzaImage } from "./pizza-image";
 import { Title } from "./title";
 import { Button } from "../ui/button";
 import { GroupVariants } from "./group-variants";
-import { PizzaSize, pizzaSizes, PizzaType, pizzaTypes } from "@/shared/constants/pizza";
+import { mapPizzaType, PizzaSize, pizzaSizes, PizzaType, pizzaTypes } from "@/shared/constants/pizza";
 import { IngredientItem } from "./ingredient-item";
+import { useSet } from "react-use";
 
 interface Props {
     imageUrl: string;
     name: string;
     ingredients: Ingredient[];
-    items?: any[];
-    onClickAdd?: VoidFunction;
+    items: ProductItem[];
+    onClickAddCart?: VoidFunction;
     className?: string;
 }
 
@@ -22,14 +23,36 @@ interface Props {
         items,
         imageUrl,
         ingredients,
-        onClickAdd,
+        onClickAddCart,
          className,
         }) => {
     const [size, setSize] = React.useState<PizzaSize>(20);
     const [type, setType] = React.useState<PizzaType>(1);
 
-    const textDetaills = '30 cm, tradicne testo 30';
-    const totalPrice = 250;
+    const [selectedIngredients, {toggle: addIngredient}] = useSet(new Set<number>([]));
+    
+    const pizzaPrice = items.find((item) => item.pizzaType === type && item.size === size)?.price || 0;
+    const totalIngredientsPrice = ingredients.filter((ingredient) => selectedIngredients.has(ingredient.id)).reduce(
+        (acc, ingredient) => acc + ingredient.price, 0);
+    const totalPrice = pizzaPrice + totalIngredientsPrice;
+
+
+    const textDetaills = `${size} cm, ${mapPizzaType[type]} pizza přísady (${selectedIngredients.size})`;
+
+
+    const handleClickAdd = () => {
+        onClickAddCart?.();
+        console.log({
+            size,
+            type,
+            ingredients: selectedIngredients,
+        })
+    }
+
+    const availablePizzaSizes = items.filter((item) => item.pizzaType === type);
+
+    console.log (items, availablePizzaSizes);
+
 
     return (
      <div className={cn(className, 'flex flex-1')}>
@@ -48,23 +71,23 @@ interface Props {
         </div>
 
 
+        <div className="bg-gray-50 p-5 rounded-md h-[420px] overflow-auto scrollbar mt-5">
         <div className="grid grid-cols-3 gap-3">
-    {ingredients?.length > 0 ? (
-        ingredients.map((ingredient) => (
+        {ingredients.map((ingredient) => (
             <IngredientItem
                 key={ingredient.id}
                 name={ingredient.name}
                 price={ingredient.price}
                 imageUrl={ingredient.imageUrl}
-                onClick={onClickAdd}
+                onClick={() => addIngredient(ingredient.id)}
+                active={selectedIngredients.has(ingredient.id)}
             />
-        ))
-    ) : (
-        <p>No ingredients available</p>
-    )}
-</div>
+        ))}
+           </div>
+        </div>
 
         <Button
+            onClick={handleClickAdd}
             className="h-[55px] px-10 text-base rounded-[18px] w-full mt-10">
             Přidat do košíku za {totalPrice} Kč
         </Button>
