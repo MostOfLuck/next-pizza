@@ -49,10 +49,23 @@ interface Props {
         })
     }
 
-    const availablePizzaSizes = items.filter((item) => item.pizzaType === type);
+    const availablePizzas = items.filter((item) => item.pizzaType === type);
+    const availablePizzaSizes = pizzaSizes.map((item) => ({
+        name: item.name,
+        value: item.value,
+        disabled: !availablePizzas.some((pizza) => Number(pizza.size) === Number(item.value)),
+    }))
 
-    console.log (items, availablePizzaSizes);
+    React.useEffect(() =>{
+        const isAvailableSize = availablePizzaSizes?.find((item) => Number(item.value) === size && !item.disabled);
+        const availableSize = availablePizzaSizes?.find((item) => !item.disabled);
 
+        if (!isAvailableSize && availableSize) {
+            setSize(Number(availableSize.value) as PizzaSize);
+        }
+    }, [type]);
+
+    console.log({items, availablePizzas, availablePizzaSizes});
 
     return (
      <div className={cn(className, 'flex flex-1')}>
@@ -65,7 +78,7 @@ interface Props {
         <p className="text-gray-400">{textDetaills}</p>
 
         <div className="flex flex-col gap-5 mt-5">
-        <GroupVariants items={pizzaSizes} Value={String(size)} onClick={value => setSize(Number(value) as PizzaSize)} />
+        <GroupVariants items={availablePizzaSizes} Value={String(size)} onClick={value => setSize(Number(value) as PizzaSize)} />
 
         <GroupVariants items={pizzaTypes} Value={String(type)} onClick={value => setType(Number(value) as PizzaType)} />      
         </div>
