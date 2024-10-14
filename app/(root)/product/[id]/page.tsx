@@ -21,7 +21,7 @@ return <Container className="flex flex-col my-10">
     <p className="text-gray-400">Lorem ipsum dolor sit reprehenderit, iure nobis.</p>
 
     <GroupVariants
-    selectedValue="2"
+    value="2"
     items={[
         {
         name: 'Malé',

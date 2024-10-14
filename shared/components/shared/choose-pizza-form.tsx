@@ -17,31 +17,30 @@ interface Props {
     name: string;
     ingredients: Ingredient[];
     items: ProductItem[];
-    onClickAddCart?: VoidFunction;
+    loading?: boolean;
+    onSubmit: (item: number, ingredients: number[]) => void;
     className?: string;
 }
-
+/* Форма выбора пиццы */
     export const ChoosePizzaForm: React.FC<Props> = ({
         name,
         items,
         imageUrl,
         ingredients,
-        onClickAddCart,
+        loading,
+        onSubmit,
          className,
         }) => {
 
-    const {size, type, selectedIngredients, availableSizes, setSize, setType, addIngredient} = usePizzaOptions(items);
+    const {size, type, selectedIngredients, availableSizes, currentItemId, setSize, setType, addIngredient} = usePizzaOptions(items);
 
             const {totalPrice, textDetaills} = getPizzaDetails(type, size, items, ingredients, selectedIngredients);
 
     
     const handleClickAdd = () => {
-        onClickAddCart?.();
-        console.log({
-            size,
-            type,
-            ingredients: selectedIngredients,
-        })
+        if (currentItemId) {
+            onSubmit(currentItemId, Array.from(selectedIngredients));
+        }
     }
 
 
@@ -56,9 +55,9 @@ interface Props {
         <p className="text-gray-400">{textDetaills}</p>
 
         <div className="flex flex-col gap-5 mt-5">
-        <GroupVariants items={availableSizes} Value={String(size)} onClick={value => setSize(Number(value) as PizzaSize)} />
+        <GroupVariants items={availableSizes} value={String(size)} onClick={value => setSize(Number(value) as PizzaSize)} />
 
-        <GroupVariants items={pizzaTypes} Value={String(type)} onClick={value => setType(Number(value) as PizzaType)} />      
+        <GroupVariants items={pizzaTypes} value={String(type)} onClick={value => setType(Number(value) as PizzaType)} />      
         </div>
 
 
@@ -78,6 +77,7 @@ interface Props {
         </div>
 
         <Button
+            loading={loading}
             onClick={handleClickAdd}
             className="h-[55px] px-10 text-base rounded-[18px] w-full mt-10">
             Přidat do košíku za {totalPrice} Kč
