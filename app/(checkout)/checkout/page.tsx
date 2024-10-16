@@ -1,6 +1,12 @@
-import { CheckoutItemDetails, Container, Title, WhiteBlock } from "@/shared/components/shared";
+import {
+  CheckoutItemDetails,
+  Container,
+  Title,
+  WhiteBlock,
+} from "@/shared/components/shared";
 import { Textarea } from "@/shared/components/ui";
 import { Input } from "@/shared/components/ui/input";
+import { Package, Percent, Truck } from "lucide-react";
 
 export default function CheckoutPage() {
   return (
@@ -50,16 +56,36 @@ export default function CheckoutPage() {
 
         {/* Right side */}
         <div className="w-[450px]">
-            <WhiteBlock className="p-6 sticky top-4">
+          <WhiteBlock className="p-6 sticky top-4">
             <div className="flex flex-col gap-1">
-                <span className="text-xl">Celkem</span>
-                <span className="text-[34px] font-extrabold">502 Kč</span>
+              <span className="text-xl">Celkem</span>
+              <span className="text-[34px] font-extrabold">502 Kč</span>
             </div>
 
-            <CheckoutItemDetails title='Náklady na zboží:' value='450 Kč'/>
-            <CheckoutItemDetails title='Náklady na zboží:' value='450 Kč'/>
-            <CheckoutItemDetails title='Náklady na zboží:' value='450 Kč'/>
-            </WhiteBlock>
+            <CheckoutItemDetails
+                 title={
+                <div className="flex items-center">
+                <Package size={18} className="mr-2 text-gray-400" />
+                Náklady na zboží:
+                </div>
+            }
+             value="450 Kč" />
+            <CheckoutItemDetails 
+                title={
+                <div className="flex items-center">
+                <Percent size={18} className="mr-2 text-gray-400" />
+                Daně:
+                </div>
+            }
+             value="450 Kč" />
+            <CheckoutItemDetails 
+                title={
+                <div className="flex items-center">
+                <Truck size={18} className="mr-2 text-gray-400" />
+                Daně:
+                </div>
+            } value="450 Kč" />
+          </WhiteBlock>
         </div>
       </div>
     </Container>
