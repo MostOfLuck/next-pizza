@@ -7,3 +7,4 @@ import { Skeleton } from "./skeleton";
 import { Popover } from "./popover";
 import { Dialog } from "./dialog";
 import { Drawer } from "./drawer";
+export { Textarea } from "./textarea";
