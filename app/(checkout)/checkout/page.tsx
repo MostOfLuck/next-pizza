@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 "use client";
 
-import { FormProvider, useForm } from "react-hook-form";
+import { FormProvider, set, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import {
@@ -14,9 +14,15 @@ import {
 } from "@/shared/components";
 import { checkoutFormSchema, CheckoutFormValues } from "@/shared/constants";
 import { useCart } from "@/shared/hooks";
+import { cn } from "@/shared/lib/utils";
+import { createOrder } from "@/app/actions";
+import toast from "react-hot-toast";
+import React from "react";
 
 export default function CheckoutPage() {
-  const { totalAmount, updateItemQuantity, items, removeCartItem } = useCart();
+  const [submitting, setSubmitting] = React.useState(false);
+  const { totalAmount, updateItemQuantity, items, removeCartItem, loading } =
+    useCart();
 
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutFormSchema),
@@ -30,8 +36,25 @@ export default function CheckoutPage() {
     },
   });
 
-  const onSubmit = (data: CheckoutFormValues) => {
-    console.log(data);
+  const onSubmit = async (data: CheckoutFormValues) => {
+    try {
+      setSubmitting(true);
+      const url = await createOrder(data);
+
+      toast.error("Objednávka byla úspěšně zadána! 📝 Přepněte na platbu...", {
+        icon: "✅",
+      });
+
+      if (url) {
+        location.href = url;
+      }
+    } catch (err) {
+      console.log(err);
+      setSubmitting(false);
+      toast.error("Nepodařilo se objednat", {
+        icon: "❌",
+      });
+    }
   };
 
   const onClickCountButton = (
@@ -59,15 +82,23 @@ export default function CheckoutPage() {
                 onClickCountButton={onClickCountButton}
                 removeCartItem={removeCartItem}
                 items={items}
+                loading={loading}
               />
-              <CheckoutPersonalForm />
+              <CheckoutPersonalForm
+                className={cn({ "opacity-40 pointer-events-none": loading })}
+              />
 
-              <CheckoutAddressForm />
+              <CheckoutAddressForm
+                className={cn({ "opacity-40 pointer-events-none": loading })}
+              />
             </div>
 
             {/* Right side */}
             <div className="w-[450px]">
-              <CheckoutSidebar totalAmount={totalAmount} />
+              <CheckoutSidebar
+                totalAmount={totalAmount}
+                loading={loading || submitting}
+              />
             </div>
           </div>
         </form>

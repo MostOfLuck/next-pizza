@@ -4,26 +4,34 @@ import { CheckoutItemDetails } from "./checkout-item-details";
 import { ArrowRight, Percent, ShoppingBasket, Truck } from "lucide-react";
 import { Button } from "../ui/button";
 import { cn } from "@/shared/lib/utils";
-
+import { Skeleton } from "../ui/skeleton";
 
 const VAT = 15;
 const DELIVERY_PRICE = 100;
 
 interface Props {
   totalAmount: number;
+  loading?: boolean;
   className?: string;
 }
 
-export const CheckoutSidebar: React.FC<Props> = ({ totalAmount, className }) => {
-
-    const vatPrice = totalAmount * (VAT / 100);
-    const totalPrice = totalAmount + DELIVERY_PRICE + vatPrice;
+export const CheckoutSidebar: React.FC<Props> = ({
+  totalAmount,
+  loading,
+  className,
+}) => {
+  const vatPrice = totalAmount * (VAT / 100);
+  const totalPrice = totalAmount + DELIVERY_PRICE + vatPrice;
 
   return (
     <WhiteBlock className={cn("p-6 sticky top-4", className)}>
       <div className="flex flex-col gap-1">
         <span className="text-xl">Celkem</span>
-        <span className="text-[34px] font-extrabold">{totalPrice} Kč</span>
+        {loading ? (
+          <Skeleton className="h-11 w-48" />
+        ) : (
+          <span className="h-11 text-[34px] font-extrabold">{totalPrice} Kč</span>
+        )}
       </div>
 
       <CheckoutItemDetails
@@ -33,7 +41,7 @@ export const CheckoutSidebar: React.FC<Props> = ({ totalAmount, className }) => 
             Cena košíku:
           </div>
         }
-        value={`${totalAmount} Kč`}
+        value={loading ? <Skeleton className="h-6 w-16 rounded-[6px]" /> : `${totalAmount} Kč`}
       />
       <CheckoutItemDetails
         title={
@@ -42,7 +50,7 @@ export const CheckoutSidebar: React.FC<Props> = ({ totalAmount, className }) => 
             Daně:
           </div>
         }
-        value={`${vatPrice} Kč`}
+        value={loading ? <Skeleton className="h-6 w-16 rounded-[6px]" /> : `${vatPrice} Kč`}
       />
       <CheckoutItemDetails
         title={
@@ -51,10 +59,11 @@ export const CheckoutSidebar: React.FC<Props> = ({ totalAmount, className }) => 
             Dodávka:
           </div>
         }
-        value={`${DELIVERY_PRICE} Kč`}
+        value={loading ? <Skeleton className="h-6 w-16 rounded-[6px]" /> : `${DELIVERY_PRICE} Kč`}
       />
 
       <Button
+        loading={loading}
         type="submit"
         className="w-full h-14 rounded-2xl mt-6 text-base font-bold"
       >

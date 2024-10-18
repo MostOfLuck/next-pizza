@@ -4,12 +4,13 @@ import { Input } from "../../ui/input";
 import { ErrorText } from "../error-text";
 import { ClearButton } from "../clear-button";
 import { useFormContext } from "react-hook-form";
-import { InputMaskElement } from 'imask';
+import { InputMaskElement } from "imask";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   inputRef?: React.Ref<HTMLInputElement | InputMaskElement>;
   label?: string;
+  ref?: React.Ref<HTMLInputElement>;
   required?: boolean;
   className?: string;
 }
@@ -17,6 +18,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 export const FormInput: React.FC<Props> = ({
   className,
   inputRef,
+  ref,
   name,
   label,
   required,
@@ -33,7 +35,7 @@ export const FormInput: React.FC<Props> = ({
   const errorText = errors[name]?.message as string;
 
   const onClickClear = () => {
-    setValue(name, "");
+    setValue(name, "", { shouldValidate: true });
   };
 
   return (
@@ -49,7 +51,6 @@ export const FormInput: React.FC<Props> = ({
           className="h-12 text-md"
           {...register(name)}
           {...props}
-          ref={inputRef as React.Ref<HTMLInputElement>}
         />
 
         {value && <ClearButton onClick={onClickClear} />}
