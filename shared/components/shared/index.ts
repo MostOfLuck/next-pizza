@@ -25,6 +25,7 @@ export { CheckoutItem } from "./checkout-item";
 export { CheckoutItemSkeleton } from "./checkout-item-skeleton";
 export { CheckoutSidebar } from "./checkout-sidebar";
 export { ClearButton } from "./clear-button";
+export * from "./email-templates";
 export * from "./checkout";
 export * from "./form";
 export * from "./modals";
