@@ -1,3 +1,4 @@
+import { ProfileButton } from "./profile-button";
 import { ClearButton } from "./clear-button";
 import { WhiteBlock } from "./white-block";
 import { Search } from "lucide-react";
@@ -25,6 +26,7 @@ export { CheckoutItem } from "./checkout-item";
 export { CheckoutItemSkeleton } from "./checkout-item-skeleton";
 export { CheckoutSidebar } from "./checkout-sidebar";
 export { ClearButton } from "./clear-button";
+export { ProfileButton } from "./profile-button";
 export * from "./email-templates";
 export * from "./checkout";
 export * from "./form";
