@@ -24,91 +24,91 @@ export const _ingredients = [
       name: 'Prkénko na sýry',
       price: 179,
       imageUrl:
-        'https://cdn.dodostatic.net/static/Img/Ingredients/99f5cb91225b4875bd06a26d2e842106.png',
+        'https://i.postimg.cc/FKXPnpgX/99f5cb91225b4875bd06a26d2e842106.png',
     },
     {
       name: 'Krémová mozzarella',
       price: 79,
       imageUrl:
-        'https://cdn.dodostatic.net/static/Img/Ingredients/cdea869ef287426386ed634e6099a5ba.png',
+        'https://i.postimg.cc/BQD75RHB/cdea869ef287426386ed634e6099a5ba.png',
     },
     {
       name: 'Sýry čedar a parmazán',
       price: 79,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA69C1FE796',
+      imageUrl: 'https://i.postimg.cc/dVYH5n9P/000-D3-A22-FA54-A81411-E9-AFA69-C1-FE796.png',
     },
     {
       name: 'Pálivé papričky jalapeño',
       price: 59,
       imageUrl:
-        'https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png',
+        'https://i.postimg.cc/LXwvLVsW/11ee95b6bfdf98fb88a113db92d7b3df.png',
     },
     {
       name: 'Křehké kuře',
       price: 79,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA5B328D35A',
+      imageUrl: 'https://i.postimg.cc/PJ1bZs9L/000-D3-A39-D824-A82-E11-E9-AFA5-B328-D35-A.png',
     },
     {
       name: 'Champignons',
       price: 59,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324',
+      imageUrl: 'https://i.postimg.cc/FzhzPM1k/000-D3-A22-FA54-A81411-E9-AFA67259-A324.png',
     },
     {
       name: 'Šunka',
       price: 79,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA61B9A8D61',
+      imageUrl: 'https://i.postimg.cc/prkT3snG/000-D3-A39-D824-A82-E11-E9-AFA61-B9-A8-D61.png',
     },
     {
       name: 'Pikantní feferonky',
       price: 79,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA6258199C3',
+      imageUrl: 'https://i.postimg.cc/fWvJ3Rgc/000-D3-A22-FA54-A81411-E9-AFA6258199-C3.png',
     },
     {
       name: 'Pikantní chorizo',
       price: 79,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA62D5D6027',
+      imageUrl: 'https://i.postimg.cc/8PPsLgqq/000-D3-A22-FA54-A81411-E9-AFA62-D5-D6027.png',
     },
     {
-      name: 'Pickles',
+      name: 'Nakládané okurky',
       price: 59,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A21DA51A81211E9EA89958D782B',
+      imageUrl: 'https://i.postimg.cc/nhXzwYV2/000-D3-A21-DA51-A81211-E9-EA89958-D782-B.png',
     },
     {
       name: 'Čerstvá rajčata',
       price: 59,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA7AC1A1D67',
+      imageUrl: 'https://i.postimg.cc/BvC8fZDQ/000-D3-A39-D824-A82-E11-E9-AFA7-AC1-A1-D67.png',
     },
     {
       name: 'Červená cibule',
       price: 59,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA60AE6464C',
+      imageUrl: 'https://i.postimg.cc/cH9r6DXp/000-D3-A22-FA54-A81411-E9-AFA60-AE6464-C.png',
     },
     {
       name: 'Šťavnaté ananasy',
       price: 59,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A21DA51A81211E9AFA6795BA2A0',
+      imageUrl: 'https://i.postimg.cc/fy1yfV45/000-D3-A21-DA51-A81211-E9-AFA6795-BA2-A0.png',
     },
     {
       name: 'Italské bylinky',
       price: 39,
       imageUrl:
-        'https://cdn.dodostatic.net/static/Img/Ingredients/370dac9ed21e4bffaf9bc2618d258734.png',
+        'https://i.postimg.cc/sXqGw67p/370dac9ed21e4bffaf9bc2618d258734.png',
     },
     {
       name: 'Sladké papriky',
       price: 59,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA63F774C1B',
+      imageUrl: 'https://i.postimg.cc/BZ2nrn0W/000-D3-A22-FA54-A81411-E9-AFA63-F774-C1-B.png',
     },
     {
       name: 'Brynza nakrájená na kostičky',
       price: 79,
-      imageUrl: 'https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA6B0FFC349',
+      imageUrl: 'https://i.postimg.cc/bvGz3zTB/000-D3-A39-D824-A82-E11-E9-AFA6-B0-FFC349.png',
     },
     {
-      name: 'Mitballs',
+      name: 'Mitbally',
       price: 79,
       imageUrl:
-        'https://cdn.dodostatic.net/static/Img/Ingredients/b2f3a5d5afe44516a93cfc0d2ee60088.png',
+        'https://i.postimg.cc/QCqsHV8H/b2f3a5d5afe44516a93cfc0d2ee60088.png',
     },
   ].map((obj, index) => ({ id: index + 1, ...obj }));
 
@@ -145,12 +145,12 @@ export const _ingredients = [
       categoryId: 3,
     },
     {
-      name: 'Dodster',
+      name: 'Shawarma',
       imageUrl: 'https://i.postimg.cc/hjxyKLXL/11-EE796-F96-D11392-A2-F6-DD73599921-B9.webp',
       categoryId: 3,
     },
     {
-      name: 'Ostrý Dodster 🌶️🌶️',
+      name: 'Pikantní shawarma 🌶️🌶️',
       imageUrl: 'https://i.postimg.cc/NjJPDfhH/11-EE796-FD3-B594068-F7-A752-DF8161-D04.webp',
       categoryId: 3,
     },
