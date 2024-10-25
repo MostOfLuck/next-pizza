@@ -33,8 +33,7 @@ export const Header: React.FC<Props> = ({
     let toastMessage = "";
 
     if (searchParams.has("paid")) {
-      toastMessage =
-        "Objednávka byla úspěšně zaplacena! Informace odeslány na poštu.";
+      toastMessage = "Objednávka byla úspěšně zaplacena! Informace odeslány na poštu.";
     }
 
     if (searchParams.has("verified")) {

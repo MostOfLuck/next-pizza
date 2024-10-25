@@ -37,8 +37,8 @@ export type PaymentCallbackData = {
   object: {
     id: string;
     status: string;
-    amount: { value: string; currency: "CZK" };
-    income_amount: { value: string; currency: "CZK" };
+    amount: { value: string; currency: "RUB" };
+    income_amount: { value: string; currency: "RUB" };
     description: string;
     recipient: { account_id: string; gateway_id: string };
     payment_method: {
@@ -50,7 +50,7 @@ export type PaymentCallbackData = {
     captured_at: string;
     created_at: string;
     test: boolean;
-    refunded_amount: { value: string; currency: "CZK" };
+    refunded_amount: { value: string; currency: "RUB" };
     paid: boolean;
     refundable: true;
     metadata: { order_id: string };
