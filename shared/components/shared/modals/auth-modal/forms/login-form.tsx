@@ -32,14 +32,14 @@ export const LoginForm: React.FC<Props> = ({ onClose }) => {
         throw Error();
       }
 
-      toast.success("Вы успешно вошли в аккаунт", {
+      toast.success("Úspěšně jste se přihlásili ke svému účtu", {
         icon: "✅",
       });
 
       onClose?.();
     } catch (error) {
       console.error("Error [LOGIN]", error);
-      toast.error("Не удалось войти в аккаунт", {
+      toast.error("Nelze se přihlásit k účtu", {
         icon: "❌",
       });
     }
@@ -53,13 +53,13 @@ export const LoginForm: React.FC<Props> = ({ onClose }) => {
       >
         <div className="flex justify-between items-center">
           <div className="mr-2">
-            <Title text="Вход в аккаунт" size="md" className="font-bold" />
+            <Title text="Přihlášení k účtu" size="md" className="font-bold" />
             <p className="text-gray-400">
-              Введите свою почту, чтобы войти в свой аккаунт
+              Zadejte svůj e-mail a přihlaste se ke svému účtu
             </p>
           </div>
           <img
-            src="/assets/images/phone-icon.png"
+            src="https://i.postimg.cc/sD0z3Zf1/phone-icon.png"
             alt="phone-icon"
             width={60}
             height={60}
@@ -67,14 +67,14 @@ export const LoginForm: React.FC<Props> = ({ onClose }) => {
         </div>
 
         <FormInput name="email" label="E-Mail" required />
-        <FormInput name="password" label="Пароль" type="password" required />
+        <FormInput name="password" label="Heslo" type="password" required />
 
         <Button
           loading={form.formState.isSubmitting}
           className="h-12 text-base"
           type="submit"
         >
-          Войти
+           Přihlásit se
         </Button>
       </form>
     </FormProvider>

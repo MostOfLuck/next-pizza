@@ -15,14 +15,14 @@ model User {
   email    String @unique 
   password String
   role UserRole @default(USER)
-  verified DateTime
+  verified DateTime?
 
   provider String?
   providerId String?
 
   cart Cart?
   orders Order[]
-  verificationCode VerficationCode?
+  verificationCode VerificationCode?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -142,7 +142,7 @@ model Order {
   updatedAt DateTime @updatedAt
 }
 
-model VerficationCode {
+model VerificationCode {
   id Int @id @default(autoincrement())
 
   user User @relation(fields: [userId], references: [id])

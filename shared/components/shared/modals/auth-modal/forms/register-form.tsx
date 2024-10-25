@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { registerUser } from "@/app/actions";
 import { TFormRegisterValues, formRegisterSchema } from "./schemas";
 import { FormInput } from "../../../form";
-import { Button } from "@/shared/components/ui";
+import { Button } from "@/shared/components/ui/button";
 
 interface Props {
   onClose?: VoidFunction;
@@ -33,13 +33,13 @@ export const RegisterForm: React.FC<Props> = ({ onClose, onClickLogin }) => {
         password: data.password,
       });
 
-      toast.error("Регистрация успешна 📝. Подтвердите свою почту", {
+      toast.error(" Registrace úspěšná 📝. Potvrďte svůj e-mail", {
         icon: "✅",
       });
 
       onClose?.();
     } catch (error) {
-      return toast.error("Неверный E-Mail или пароль", {
+      return toast.error("Neplatný e-mail nebo heslo", {
         icon: "❌",
       });
     }
@@ -52,11 +52,11 @@ export const RegisterForm: React.FC<Props> = ({ onClose, onClickLogin }) => {
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FormInput name="email" label="E-Mail" required />
-        <FormInput name="fullName" label="Полное имя" required />
-        <FormInput name="password" label="Пароль" type="password" required />
+        <FormInput name="fullName" label="Plné jméno" required />
+        <FormInput name="password" label="Heslo" type="password" required />
         <FormInput
           name="confirmPassword"
-          label="Подтвердите пароль"
+          label="Potvrzení hesla"
           type="password"
           required
         />
@@ -66,7 +66,7 @@ export const RegisterForm: React.FC<Props> = ({ onClose, onClickLogin }) => {
           className="h-12 text-base"
           type="submit"
         >
-          Зарегистрироваться
+          Zaregistrujte se
         </Button>
       </form>
     </FormProvider>
