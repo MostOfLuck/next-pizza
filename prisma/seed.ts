@@ -161,28 +161,22 @@ async function up() {
   await prisma.story.createMany({
     data: [
       {
-        previewImageUrl:
-          "https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496",
+        previewImageUrl: "https://i.postimg.cc/C5Qs4VCw/logo-350x440-1-png.png",
       },
       {
-        previewImageUrl:
-          "https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640",
+        previewImageUrl: "https://i.postimg.cc/jSbgYY2g/1.png",
       },
       {
-        previewImageUrl:
-          "https://cdn.inappstory.ru/story/quw/acz/zf5/zu37vankpngyccqvgzbohj1/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=1336215020",
+        previewImageUrl: "https://i.postimg.cc/D0J8fNjm/logo-350x440-2.png",
       },
       {
-        previewImageUrl:
-          "https://cdn.inappstory.ru/story/7oc/5nf/ipn/oznceu2ywv82tdlnpwriyrq/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=38903958",
+        previewImageUrl: "https://i.postimg.cc/K8mzWQSX/131.png",
       },
       {
-        previewImageUrl:
-          "https://cdn.inappstory.ru/story/q0t/flg/0ph/xt67uw7kgqe9bag7spwkkyw/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=2941222737",
+        previewImageUrl: "https://i.postimg.cc/28D8qT5q/1233.png",
       },
       {
-        previewImageUrl:
-          "https://cdn.inappstory.ru/story/lza/rsp/2gc/xrar8zdspl4saq4uajmso38/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=4207486284",
+        previewImageUrl: "https://i.postimg.cc/2yG2m26q/3.png",
       },
     ],
   });
