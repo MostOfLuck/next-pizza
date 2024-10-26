@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Header } from "@/shared/components/shared/header";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Slunečná pizza",
@@ -14,10 +15,12 @@ export default function HomeLayout({
   modal: React.ReactNode;
 }>) {
   return (
-        <main className="min-h-screen">
-         <Header />
-        {children}
-        {modal}
-        </main>
+    <main className="min-h-screen">
+      <Suspense>
+        <Header />
+      </Suspense>
+      {children}
+      {modal}
+    </main>
   );
 }
