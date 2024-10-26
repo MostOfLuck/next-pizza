@@ -162,11 +162,11 @@ async function up() {
     data: [
       {
         previewImageUrl:
-          "https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496",
+          "https://i.postimg.cc/vTNHpvGM/logo-350x440-1.png",
       },
       {
         previewImageUrl:
-          "https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640",
+          "https://i.postimg.cc/jSbgYY2g/1.png",
       },
       {
         previewImageUrl:
