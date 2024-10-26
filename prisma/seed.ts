@@ -158,6 +158,7 @@ async function up() {
     },
   });
 
+  
   await prisma.story.createMany({
     data: [
       {
