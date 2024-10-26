@@ -1,9 +1,6 @@
 <p align="center">
-  <img src="https://i.postimg.cc/njxzZrBv/image.png" alt="Screenshot-2024-10-26-201557" width="1000px">
+      <img src="https://i.ibb.co/n7KrrrS/Screenshot-2024-10-26-201557.png" width="726">
 </p>
-
-
-
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
