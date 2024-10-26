@@ -70,7 +70,7 @@ async function up() {
 
   const pizza2 = await prisma.product.create({
     data: {
-      name: "Sýr",
+      name: "Sýrová",
       imageUrl: "https://i.postimg.cc/Fsj7Q2W1/Syr.avif",
       categoryId: 1,
       ingredients: {
