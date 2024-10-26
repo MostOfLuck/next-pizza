@@ -1,17 +1,13 @@
-'use client';
+"use client";
 
 import React from "react";
 import { WhiteBlock } from "../white-block";
 import { FormInput } from "../form";
-import { usePhoneMask } from "@/shared/hooks";
-
 interface Props {
   className?: string;
 }
 
 export const CheckoutPersonalForm: React.FC<Props> = ({ className }) => {
-  const phoneMask = usePhoneMask();
-
   return (
     <WhiteBlock title="2. Osobní údaje" className={className}>
       <div className="grid grid-cols-2 gap-5">
@@ -22,12 +18,7 @@ export const CheckoutPersonalForm: React.FC<Props> = ({ className }) => {
           placeholder="Přijmení"
         />
         <FormInput name="email" className="text-base" placeholder="Email" />
-        <FormInput
-          name="phone"
-          className="text-base"
-          placeholder="Telefon"
-          inputRef={phoneMask.ref}
-        />
+        <FormInput name="phone" className="text-base" placeholder="Telefon" />
       </div>
     </WhiteBlock>
   );

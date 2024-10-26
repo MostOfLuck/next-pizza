@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-no-duplicate-props */
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { FormProvider, set, useForm } from "react-hook-form";
@@ -17,14 +17,15 @@ import { useCart } from "@/shared/hooks";
 import { cn } from "@/shared/lib/utils";
 import { createOrder } from "@/app/actions";
 import toast from "react-hot-toast";
-import React from "react";
+import React, { Suspense } from "react";
 import { useSession } from "next-auth/react";
 import { Api } from "@/shared/services/api-client";
 
 export default function CheckoutPage() {
   const [submitting, setSubmitting] = React.useState(false);
-  const { totalAmount, updateItemQuantity, items, removeCartItem, loading } = useCart();
-  const {data: session} = useSession();
+  const { totalAmount, updateItemQuantity, items, removeCartItem, loading } =
+    useCart();
+  const { data: session } = useSession();
 
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutFormSchema),
@@ -41,11 +42,11 @@ export default function CheckoutPage() {
   React.useEffect(() => {
     async function fetchUserInfo() {
       const data = await Api.auth.getMe();
-      const [firstName, lastName] = data.fullName.split(' ');
+      const [firstName, lastName] = data.fullName.split(" ");
 
-      form.setValue('firstName', firstName);
-      form.setValue('lastName', lastName);
-      form.setValue('email', data.email);
+      form.setValue("firstName", firstName);
+      form.setValue("lastName", lastName);
+      form.setValue("email", data.email);
     }
 
     if (session) {
@@ -89,7 +90,6 @@ export default function CheckoutPage() {
         text="Zadávání objednávek"
         className="font-extrabold mb-8 text-[36px]"
       />
-
       <FormProvider {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="flex gap-10">
