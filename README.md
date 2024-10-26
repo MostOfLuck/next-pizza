@@ -3,6 +3,10 @@
 </p>
 
 
+## About
+
+This is food ordering web aplication made for czech food restaurant 🍕
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
