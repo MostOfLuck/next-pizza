@@ -1,6 +1,7 @@
 <p align="center">
-      <img src="[Screenshot-2024-10-26-201557.png](https://postimg.cc/njxzZrBv)">
+  <img src="https://postimg.cc/njxzZrBv" alt="Screenshot-2024-10-26-201557">
 </p>
+
 
 
 
